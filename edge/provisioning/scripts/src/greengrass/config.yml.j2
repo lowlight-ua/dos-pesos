@@ -1,0 +1,16 @@
+---
+system:
+  certificateFilePath: "{{ greengrass_installer.rootpath }}/device.pem.crt"
+  privateKeyPath: "{{ greengrass_installer.rootpath }}/private.pem.key"
+  rootCaPath: "{{ greengrass_installer.rootpath }}/AmazonRootCA1.pem"
+  rootpath: "{{ greengrass_installer.rootpath }}"
+  thingName: "{{ terraform.core_iot_thing_name }}"
+services:
+  aws.greengrass.Nucleus:
+    componentType: "NUCLEUS"
+    version: "{{ greengrass_installer.version }}"
+    configuration:
+      awsRegion: "{{ terraform.region }}"
+      iotRoleAlias: "GreengrassCoreTokenExchangeRoleAlias"
+      iotDataEndpoint: "{{ iotDataEndpoint }}"
+      iotCredEndpoint: "{{ iotCredEndpoint }}"

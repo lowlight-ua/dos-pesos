@@ -1,0 +1,38 @@
+set -e
+set -x
+
+cd "$(dirname "$0")"
+
+DOWNLOAD_DIR={{ paths.greengrass_setup.download_dir }}
+
+cp config.yml $DOWNLOAD_DIR
+cp device.pem.crt $DOWNLOAD_DIR
+cp private.pem.key $DOWNLOAD_DIR
+
+cd $DOWNLOAD_DIR
+
+curl -s https://d2s8p88vqu9w66.cloudfront.net/releases/greengrass-{{ greengrass_installer.version }}.zip > greengrass-{{ greengrass_installer.version }}.zip
+
+unzip greengrass-{{ greengrass_installer.version }}.zip -d GreengrassInstaller && rm greengrass-{{ greengrass_installer.version }}.zip
+java -jar ./GreengrassInstaller/lib/Greengrass.jar --version
+
+mv config.yml ./GreengrassInstaller/config.yaml
+
+if ! id -u ggc_user >/dev/null 2>&1; then
+  sudo useradd --system --create-home ggc_user
+fi
+
+if ! getent group ggc_group >/dev/null 2>&1; then
+  sudo groupadd --system ggc_group
+fi
+
+sudo -E java -Droot="{{ greengrass_installer.rootpath }}" -Dlog.store=FILE \
+  -jar ./GreengrassInstaller/lib/Greengrass.jar \
+  --init-config ./GreengrassInstaller/config.yaml \
+  --component-default-user ggc_user:ggc_group \
+  --setup-system-service true
+
+sudo mv device.pem.crt {{ greengrass_installer.rootpath }}/device.pem.crt
+sudo mv private.pem.key {{ greengrass_installer.rootpath }}/private.pem.key
+curl -s https://www.amazontrust.com/repository/AmazonRootCA1.pem > AmazonRootCA1.pem 
+sudo mv AmazonRootCA1.pem {{ greengrass_installer.rootpath }}/AmazonRootCA1.pem

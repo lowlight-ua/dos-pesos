@@ -1,0 +1,23 @@
+{
+  "targetArn": "{{ thingArn }}",
+  "components": {
+
+    "aws.greengrass.Cli": {
+      "componentVersion": "{{ greengrass_installer.version }}"
+    },
+
+    "aws.greengrass.clientdevices.Auth":
+    {
+      "componentVersion": "2.3.2",
+      "configurationUpdate": {
+        "merge": "{ \"deviceGroups\": { \"formatVersion\": \"2021-03-05\", \"definitions\": { \"MyPermissiveDeviceGroup\": { \"selectionRule\": \"thingName: *\", \"policyName\": \"MyPermissivePolicy\" } }, \"policies\": { \"MyPermissivePolicy\": { \"AllowAll\": { \"statementDescription\": \"Allow client devices to perform all actions.\", \"operations\": [ \"*\" ], \"resources\": [ \"*\" ] } } } } }"
+      }
+    },
+
+    "aws.greengrass.clientdevices.mqtt.Moquette":
+    {
+      "componentVersion": "2.3.2"    
+    }
+
+  }
+}
