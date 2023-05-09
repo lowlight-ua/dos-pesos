@@ -1,18 +1,22 @@
-terraform:
+aws:
 
-    # AWS region
-    region: 
+  # AWS region
+  region: 
+
+greengrass:
+
+  core:
 
     # Name of the Greenrass core device:
-    core_iot_thing_name:
+    iot_thing_name: 
 
     # Name of the Greengrass that the core device will belong to:
-    greengrass_group_name:
+    group_name: 
 
-greengrass_installer:
+  install:
 
-  # Desired installer version
-  version: '2.9.6'
+    # Desired installer version
+    version: '2.9.6'
 
-  # Desired installation dir
-  rootpath: '/greengrass/v2'
+    # Desired installation dir
+    rootpath: '/greengrass/v2'
