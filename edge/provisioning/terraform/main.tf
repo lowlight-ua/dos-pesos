@@ -68,22 +68,7 @@ resource "aws_iot_policy_attachment" "rel__GreengrassV2IoTThingPolicy__cert" {
 
 # Token exchange role ---------------------------------------------------------
 
-# Greengrass core devices use an IAM service role, called the token exchange role, 
-# to authorize calls to AWS services. The device uses the AWS IoT credentials provider 
-# to get temporary AWS credentials for this role, which allows the device to interact 
-# with AWS IoT, send logs to Amazon CloudWatch Logs, and download custom component 
-# artifacts from Amazon S3. 
-
-# You use an AWS IoT role alias to configure the token exchange role for Greengrass 
-# core devices. Role aliases enable you to change the token exchange role for a device 
-# but keep the device configuration the same. 
-
-# Here: Create a token exchange IAM role and an AWS IoT role alias that points 
-# to the role. 
-
-# 1. Create an IAM role that device can use as a token exchange role.  
-
-# 3. Create and attach an AWS IoT policy that allows the Greengrass core device 
+# Create and attach an AWS IoT policy that allows the Greengrass core device 
 # to use the role alias to assume the token exchange role. 
 
 resource "aws_iot_policy_attachment" "rel_GreengrassV2IoTThingPolicy" {
