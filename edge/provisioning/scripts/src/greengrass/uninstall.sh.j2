@@ -1,0 +1,6 @@
+sudo systemctl stop greengrass.service
+sudo systemctl disable greengrass.service
+sudo rm /etc/systemd/system/greengrass.service
+sudo systemctl daemon-reload && sudo systemctl reset-failed
+
+sudo rm -r "{{ greengrass_installer.rootpath }}"
