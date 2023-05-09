@@ -15,4 +15,4 @@ greengrass_installer:
   version: '2.9.6'
 
   # Desired installation dir
-  greengrass_root_dir: '/greengrass/v2'
+  rootpath: '/greengrass/v2'

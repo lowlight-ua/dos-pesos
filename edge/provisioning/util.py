@@ -2,7 +2,7 @@ import os
 import shutil
 import time
 
-from jinja2 import Environment, FileSystemLoader
+from jinja2 import Environment, FileSystemLoader, StrictUndefined
 
 
 def stop(msg: str):
@@ -49,7 +49,7 @@ def backup(path):
 
 def expand_jinja_templates(base_dir, context):
     # Set up Jinja environment
-    env = Environment(loader=FileSystemLoader(base_dir))
+    env = Environment(loader=FileSystemLoader(base_dir), undefined=StrictUndefined)
 
     # Recursively walk through the directory
     for root, _, files in os.walk(base_dir):
