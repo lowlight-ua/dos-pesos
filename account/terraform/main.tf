@@ -44,11 +44,6 @@ resource "aws_iot_policy" "aws_iot__core_iot_thing" {
 # core devices. Role aliases enable you to change the token exchange role for a device 
 # but keep the device configuration the same. 
 
-# Here: Create a token exchange IAM role and an AWS IoT role alias that points 
-# to the role. 
-
-# 1. Create an IAM role that device can use as a token exchange role.  
-
 resource "aws_iam_role" "greengrass_v2_token_exchange" {
   name               = "GreengrassV2TokenExchangeRole"
   assume_role_policy = jsonencode(
@@ -66,8 +61,6 @@ resource "aws_iam_role" "greengrass_v2_token_exchange" {
     }
   )
 }
-
-# 2. Create an AWS IoT role alias that points to the token exchange role.
 
 resource "aws_iot_role_alias" "greengrass_v2_token_exchange_alias" {
   alias = "GreengrassCoreTokenExchangeRoleAlias"
@@ -101,10 +94,6 @@ resource "aws_iam_role_policy_attachment" "rel_policy_greengrass_v2_token_exchan
   role       = aws_iam_role.greengrass_v2_token_exchange.name
 }
 
-
-# 3. Create and attach an AWS IoT policy that allows the Greengrass core device 
-# to use the role alias to assume the token exchange role. 
-
 resource "aws_iot_policy" "GreengrassCoreTokenExchangeRoleAliasPolicy" {
   name = "GreengrassCoreTokenExchangeRoleAliasPolicy"
 
@@ -121,6 +110,7 @@ resource "aws_iot_policy" "GreengrassCoreTokenExchangeRoleAliasPolicy" {
     }
   )
 }
+
 
 # Greengrass service role -----------------------------------------------------
 
@@ -153,8 +143,6 @@ resource "aws_iam_role_policy_attachment" "rel__greengrass_service_role" {
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy"
   role = aws_iam_role.greengrass_service_role.name
 }
-
-# Associate the Greengrass service role with AWS IoT Greengrass for the AWS account
 
 resource "null_resource" "associate_greengrassv2_service_role" {
   depends_on = [aws_iam_role.greengrass_service_role]
