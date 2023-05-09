@@ -125,15 +125,7 @@ resource "aws_iam_role" "greengrass_service_role" {
         "Principal": {
           "Service": "greengrass.amazonaws.com"
         },
-        "Action": "sts:AssumeRole",
-        "Condition": {
-          "ArnLike": {
-            "aws:SourceArn": "arn:aws:greengrass:region:account-id:*"
-          },
-          "StringEquals": {
-            "aws:SourceAccount": "account-id"
-          }
-        }
+        "Action": "sts:AssumeRole"
       }
     ]
   })
