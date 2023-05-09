@@ -23,7 +23,7 @@ paths = DotMap({
 # ---------------------------------------------------------
 
 def get_thing_arn():    
-    thing_arn_command = f"aws iot describe-thing --thing-name {master_cfg['terraform']['core_iot_thing_name']} --output json"
+    thing_arn_command = f"aws iot describe-thing --thing-name {master_cfg['greengrass']['core']['core_iot_thing_name']} --output json"
     print("    Getting thing ARN...")
     response = subprocess.check_output(thing_arn_command, shell=True).decode('utf-8')
     return json.loads(response)["thingArn"]
@@ -55,7 +55,11 @@ if __name__ == "__main__":
         util.stop("No empty values are allowed in `config.yml`. Please fix and re-run the script.")
 
     print(f"Writing terraform variables to `{paths.terraform_vars}`.")
-    tf_cfg = master_cfg["terraform"]
+    tf_cfg = {
+        'region': master_cfg["aws"]["region"],
+        'core_iot_thing_name': master_cfg["greengrass"]["core"]["core_iot_thing_name"],
+        'greengrass_group_name': master_cfg["greengrass"]["core"]["greengrass_group_name"]
+    }
     util.handle_existing_file(paths.terraform_vars)
     with open(paths.terraform_vars, "w") as tf_vars:
         tf_vars.write(json.dumps(tf_cfg, indent=4))

@@ -1,0 +1,5 @@
+{
+    "region": "us-west-2",
+    "core_iot_thing_name": "FirstCore",
+    "greengrass_group_name": "FirstGroup"
+}
