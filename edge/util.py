@@ -1,6 +1,7 @@
 import os
 import shutil
 import time
+import yaml
 
 from jinja2 import Environment, FileSystemLoader, StrictUndefined
 
@@ -10,42 +11,31 @@ def stop(msg: str):
     exit()
 
 
-def contains_none(dic):
-    for k, v in dic.items():
-        if v is None:
-            return True
-        if isinstance(v, dict):
+def contains_none(obj):
+    if isinstance(obj, dict):
+        for k, v in obj.items():
             if contains_none(v):
                 return True
-        if isinstance(v, list):
-            for item in v:
-                if contains_none(item):
-                    return True
-    return False
+    elif isinstance(obj, list):
+        for v in obj:
+            if contains_none(v):
+                return True
+    else:
+        return obj is None
+    
 
-
-def handle_existing_file(file_path):
-    if os.path.isfile(file_path):
-        while True:
-            user_choice = input(f"`{file_path}` already exists; (o)verwrite or (s)kip? ")
-            if user_choice == 'o':
-                backup(file_path)
-                break
-            elif user_choice == 's':
-                break
-            else:
-                stop("Invalid input. Please enter 'o' to overwrite or 's' to skip.")
+def read_cfg(path, join_with = None):
+    try:
+        with open(path) as f:
+            return yaml.safe_load(f.read())
+    except FileNotFoundError:
+        stop(f"{path} not found. Did you forget to create it from the provided template?")
 
 
 def mkdir_if_missing(path):
     if not os.path.exists(path):
         os.makedirs(path)
         
-
-def backup(path):
-    ts = int(time.time())
-    shutil.copy(path, f"{path}.{ts}.backup")
-
 
 def expand_jinja_templates(base_dir, context):
     # Set up Jinja environment

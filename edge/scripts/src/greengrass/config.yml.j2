@@ -1,14 +1,14 @@
 ---
 system:
-  certificateFilePath: "{{ greengrass.install.rootpath }}/device.pem.crt"
-  privateKeyPath: "{{ greengrass.install.rootpath }}/private.pem.key"
-  rootCaPath: "{{ greengrass.install.rootpath }}/AmazonRootCA1.pem"
-  rootpath: "{{ greengrass.install.rootpath }}"
-  thingName: "{{ greengrass.core.iot_thing_name }}"
+  certificateFilePath: "{{ greengrass_install.rootpath }}/device.pem.crt"
+  privateKeyPath: "{{ greengrass_install.rootpath }}/private.pem.key"
+  rootCaPath: "{{ greengrass_install.rootpath }}/AmazonRootCA1.pem"
+  rootpath: "{{ greengrass_install.rootpath }}"
+  thingName: "{{ greengrass_core.iot_thing_name }}"
 services:
   aws.greengrass.Nucleus:
     componentType: "NUCLEUS"
-    version: "{{ greengrass.install.version }}"
+    version: "{{ greengrass_install.version }}"
     configuration:
       awsRegion: "{{ aws.region }}"
       iotRoleAlias: "GreengrassCoreTokenExchangeRoleAlias"

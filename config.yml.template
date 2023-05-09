@@ -1,0 +1,12 @@
+aws:
+
+  # AWS region
+  region: 
+
+greengrass_core:
+
+  # Name of the Greenrass core device:
+  iot_thing_name: 
+
+  # Name of the Greengrass that the core device will belong to:
+  group_name:   

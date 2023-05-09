@@ -9,7 +9,6 @@ import util
 
 
 paths = DotMap({
-    'master_config': 'config.yml',
     'terraform_vars': 'terraform/terraform.tfvars.json',
     'src': 'scripts/src',
     'out': 'scripts/out',
@@ -23,7 +22,7 @@ paths = DotMap({
 # ---------------------------------------------------------
 
 def get_thing_arn():    
-    thing_arn_command = f"aws iot describe-thing --thing-name {master_cfg['greengrass']['core']['iot_thing_name']} --output json"
+    thing_arn_command = f"aws iot describe-thing --thing-name {master_cfg['greengrass_core']['iot_thing_name']} --output json"
     print("    Getting thing ARN...")
     response = subprocess.check_output(thing_arn_command, shell=True).decode('utf-8')
     return json.loads(response)["thingArn"]
@@ -45,11 +44,7 @@ def get_iot_endpoints():
 
 if __name__ == "__main__":
 
-    if not os.path.exists(paths.master_config):
-        util.stop("Please copy `config.yml.template` to `config.yml` and fill the values out.")
-
-    with open(paths.master_config) as master_cfg_file:
-        master_cfg = yaml.safe_load(master_cfg_file.read())
+    master_cfg = util.read_cfg('../config.yml') | util.read_cfg('config.yml')
 
     if util.contains_none(master_cfg):
         util.stop("No empty values are allowed in `config.yml`. Please fix and re-run the script.")
@@ -57,10 +52,9 @@ if __name__ == "__main__":
     print(f"Writing terraform variables to `{paths.terraform_vars}`.")
     tf_cfg = {
         'region': master_cfg["aws"]["region"],
-        'iot_thing_name': master_cfg["greengrass"]["core"]["iot_thing_name"],
-        'group_name': master_cfg["greengrass"]["core"]["group_name"]
+        'iot_thing_name': master_cfg["greengrass_core"]["iot_thing_name"],
+        'group_name': master_cfg["greengrass_core"]["group_name"]
     }
-    util.handle_existing_file(paths.terraform_vars)
     with open(paths.terraform_vars, "w") as tf_vars:
         tf_vars.write(json.dumps(tf_cfg, indent=4))
 
