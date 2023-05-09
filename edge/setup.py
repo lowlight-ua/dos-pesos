@@ -44,10 +44,14 @@ def get_iot_endpoints():
 
 if __name__ == "__main__":
 
+    # Read config
+
     master_cfg = util.read_cfg('../config.yml') | util.read_cfg('config.yml')
 
     if util.contains_none(master_cfg):
-        util.stop("No empty values are allowed in `config.yml`. Please fix and re-run the script.")
+        util.stop("Error: Some values in the config files are uninitialized.")
+
+    # Write terraform vars
 
     print(f"Writing terraform variables to `{paths.terraform_vars}`.")
     tf_cfg = {
@@ -58,13 +62,17 @@ if __name__ == "__main__":
     with open(paths.terraform_vars, "w") as tf_vars:
         tf_vars.write(json.dumps(tf_cfg, indent=4))
 
+    # Get endpoint info
+
     print("Gathering environment information...")
     try:
         thing_arn = get_thing_arn()
         iot_data, iot_cred = get_iot_endpoints()
     except subprocess.CalledProcessError:
-        util.stop("Please run the terraform scripts and then re-run this script.")
+        util.stop("Error reading info from AWS. Did you apply terraform?")
     
+    # Create scripts
+
     context = master_cfg | {
         'thingArn': thing_arn,
         'iotDataEndpoint': iot_data,
