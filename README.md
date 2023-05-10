@@ -1,6 +1,6 @@
 # Useless Greengrass project
 
-This project demonstrates how to automate the creation/provisionong of AWS Greengrass core devices and connected IoT things. You create and deploy any number of Greengrass cores, and any number of IoT things connected to the cores, by running CLI commands.
+This project is an experiment in automation of the creation/provisionong of AWS Greengrass core devices and connected IoT things. You create and deploy any number of Greengrass cores, and any number of IoT things connected to the cores, by running CLI commands.
 
 Automation takes care of:
 
@@ -14,6 +14,16 @@ The user only has to specify the AWS region and the desired names for these devi
 Deprovisioning/uninsallation is automatic as well.
 
 Other than that, the project does nothing, so it's useless, though it's potentially useful as a project template.
+
+## Why?
+
+* Wear a devops hat, try out Terraform.
+* The complexity of AWS IoT projects feels challenging. It called me.
+
+## Next steps?
+
+* Introduce a useless custom Greengrass component (for message filtering/decoration)
+* Introduce a useless back end, such as aS3 bucket for messages
 
 # Creating account-level AWS resources
 
@@ -121,4 +131,6 @@ python3 pubsub.py --endpoint ??? --port ??? --cert device.pem.crt --key private.
 **On the development machine:**
 
 * `cd thing/terraform`
-* `terraform destroy`
+
+* ##### `terraform destroy`
+
