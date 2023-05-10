@@ -3,8 +3,6 @@ import shutil
 import sys
 from pathlib import Path
 
-sys.path.append(os.environ['DO_ROOT'])
-
 from do import util
 
 CONFIG = 'config.yml'

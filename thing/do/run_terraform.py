@@ -1,12 +1,8 @@
 import os
-import sys
 import subprocess
-
-sys.path.append(os.environ['DO_ROOT'])
-
 from pathlib import Path
 
-from do import util, ensure_aws_cli
+from do import ensure_aws_cli, util
 from thing.do import write_terraform_vars
 
 os.chdir(Path(__file__).parents[1])

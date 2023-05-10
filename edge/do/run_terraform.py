@@ -1,9 +1,5 @@
 import os
-import sys
 import subprocess
-
-sys.path.append(os.environ['DO_ROOT'])
-
 from pathlib import Path
 
 from do import util

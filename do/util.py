@@ -1,7 +1,8 @@
 import os
+import subprocess
+
 import yaml
 from jinja2 import Environment, FileSystemLoader, StrictUndefined
-import subprocess
 
 
 def contains_none(obj):

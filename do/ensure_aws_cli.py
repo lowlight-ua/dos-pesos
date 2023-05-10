@@ -1,8 +1,6 @@
 import os
 import sys
 
-sys.path.append(os.environ['DO_ROOT'])
-
 from do import util
 
 print("Checking AWS CLI")

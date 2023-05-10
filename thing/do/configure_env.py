@@ -1,18 +1,14 @@
 import os
-import sys
-import subprocess
 import shutil
-import requests
+import subprocess
 from pathlib import Path
+
+import requests
 
 CERTS = 'terraform/client-iot-thing-certs'
 OUT = 'out'
 
-sys.path.append(os.environ['DO_ROOT'])
-
-from thing.do import \
-    ensure_config, \
-    run_terraform
+from thing.do import ensure_config, run_terraform
 
 print("Getting current edge connectivity info")
 

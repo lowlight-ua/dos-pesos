@@ -1,12 +1,8 @@
 import os
-import sys
-
-sys.path.append(os.environ['DO_ROOT'])
-
 import shutil
 from pathlib import Path
 
-from do import util, ensure_config
+from do import ensure_config, util
 
 CONFIG = 'config.yml'
 

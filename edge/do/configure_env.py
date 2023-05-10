@@ -1,15 +1,9 @@
 import os
-import sys
 import shutil
 from pathlib import Path
 
-sys.path.append(os.environ['DO_ROOT'])
-
-from do import util, ensure_aws_cli
-from edge.do import \
-    ensure_config, \
-    run_terraform, \
-    ensure_aws_resources \
+from do import ensure_aws_cli, util
+from edge.do import ensure_aws_resources, ensure_config, run_terraform
 
 print("Configuring development environment for edge")
 

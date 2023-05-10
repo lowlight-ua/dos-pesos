@@ -1,9 +1,6 @@
-import os
-import sys
-from pathlib import Path
 import json
-
-sys.path.append(os.environ['DO_ROOT'])
+import os
+from pathlib import Path
 
 from do import util
 from thing.do import ensure_config
