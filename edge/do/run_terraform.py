@@ -15,7 +15,7 @@ print("Running terraform to provision AWS resources required for the edge device
 util.check_program_availability('terraform')
 
 os.chdir('terraform')
-cmd = 'terraform apply'
+cmd = 'terraform init && terraform apply'
 print(f"Starting `{cmd}` in `{os.getcwd()}` ")
 
 process = subprocess.Popen(cmd, shell=True)
