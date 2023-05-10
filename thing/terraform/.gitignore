@@ -1,0 +1,25 @@
+# Input vars
+*.tfvars.json
+
+# Ignore .tfstate files, which store the state of the infrastructure
+*.tfstate
+*.tfstate.*
+
+# Ignore the .terraform directory, which contains downloaded plugins and other dependencies
+.terraform/
+
+# Ignore crash.log files
+crash.log
+
+# Ignore override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Ignore CLI configuration files
+.terraformrc
+terraform.rc
+
+# Creds
+client-iot-thing-certs/

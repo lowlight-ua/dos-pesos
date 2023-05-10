@@ -1,0 +1,4 @@
+client_iot_thing:
+
+  # Name of the IoT thing:
+  iot_thing_name: 
