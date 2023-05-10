@@ -74,6 +74,7 @@ These steps will set up a new IoT thing by provisioning the necessary AWS resour
 
 To create a Thing for testing purposes:
 
+* Install Python and Pip.
 * Install the AWS IoT Device SDK v2 for Python:
     * `git clone https://github.com/aws/aws-iot-device-sdk-python-v2.git`
     * In the cloned repo: `python3 -m pip install --user ./aws-iot-device-sdk-python-v2`
