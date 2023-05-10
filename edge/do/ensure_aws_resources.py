@@ -8,7 +8,7 @@ sys.path.append(os.environ['DO_ROOT'])
 import shutil
 from pathlib import Path
 
-from do import util
+from do import util, ensure_aws_cli
 from edge.do import ensure_config
 
 os.chdir(Path(__file__).parents[1])

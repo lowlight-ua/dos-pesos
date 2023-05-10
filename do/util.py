@@ -1,6 +1,7 @@
 import os
 import yaml
 from jinja2 import Environment, FileSystemLoader, StrictUndefined
+import subprocess
 
 
 def contains_none(obj):
@@ -59,3 +60,19 @@ def expand_jinja_templates(base_dir, context):
 
                 # Remove template file
                 os.remove(os.path.join(root, file))
+
+
+def check_program_availability(program_name):
+    print(f"Checking if {program_name} is installed")
+    try:
+        subprocess.run([program_name, '--version'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    except FileNotFoundError:
+        stop(f'{program_name} is not installed. Please install it and start over.')
+
+
+def check_successful_execution(command):
+    try:
+        subprocess.check_call(command, shell=True)
+        return True
+    except subprocess.CalledProcessError:
+        return False

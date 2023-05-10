@@ -5,8 +5,11 @@ from pathlib import Path
 
 sys.path.append(os.environ['DO_ROOT'])
 
-from do import util
-from edge.do import ensure_config, run_terraform, ensure_aws_resources
+from do import util, ensure_aws_cli
+from edge.do import \
+    ensure_config, \
+    run_terraform, \
+    ensure_aws_resources \
 
 print("Configuring development environment for edge")
 
