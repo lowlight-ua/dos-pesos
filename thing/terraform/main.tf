@@ -93,6 +93,6 @@ resource "null_resource" "associate_client_device_with_core_device" {
 
   provisioner "local-exec" {
     when    = "destroy"
-    command = "aws greengrassv2 batch-disassociate-client-device-with-core-device --core-device-thing-name ${self.triggers.core_iot_thing_name} --entries thingName=${self.triggers.client_iot_thing_name}"
+    command = "aws greengrassv2 batch-disassociate-client-device-from-core-device --core-device-thing-name ${self.triggers.core_iot_thing_name} --entries thingName=${self.triggers.client_iot_thing_name}"
   }
 }

@@ -44,7 +44,7 @@ The provisioning scripts are:
     * `uninstall.sh`: Uninstalls Greengrass core software.
 2. `components`: After installing Greengrass core:
     * `setup.sh`: Initiates a Greengrass deployment to the Greengrass core device that will install the necessary Greengrass components.
-    * `check_deployment.sh`: Checks the status of the initiated deployment.
+    * `check_deployment.sh`: Checks the status of the initiated deployment. You may run this periodically until the deployment has completed.
     * `list.sh`: Lists the installed components, to verify the deployment.
 
 ## Tearing down the edge device
@@ -86,3 +86,10 @@ To create a Thing for testing purposes:
 ```
 python3 pubsub.py --endpoint ??? --port ??? --cert device.pem.crt --key private.pem.key --ca_file ca.pem --client_id ???
 ```
+
+## Deprovisioning an IoT thing
+
+**On the development machine:**
+
+* `cd thing/terraform`
+* `terraform destroy`
