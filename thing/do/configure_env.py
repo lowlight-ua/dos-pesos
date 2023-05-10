@@ -2,12 +2,11 @@ import os
 import sys
 import subprocess
 import shutil
-import json
+import requests
 from pathlib import Path
 
 CERTS = 'terraform/client-iot-thing-certs'
 OUT = 'out'
-OUT_CERTS = 'out/certs'
 
 sys.path.append(os.environ['DO_ROOT'])
 
@@ -25,11 +24,36 @@ os.chdir(Path(__file__).parents[1])
 
 print(f"Writing thing info to {os.path.abspath(OUT)}")
 
-shutil.rmtree(OUT)
-os.makedirs(OUT_CERTS)
+if os.path.isdir(OUT):
+    shutil.rmtree(OUT)
+os.makedirs(OUT)
 
-shutil.copy(f"{CERTS}/device.pem.crt", OUT_CERTS)
-shutil.copy(f"{CERTS}/private.pem.key", OUT_CERTS)
+shutil.copy(f"{CERTS}/device.pem.crt", OUT)
+shutil.copy(f"{CERTS}/private.pem.key", OUT)
+
+with open(f'{OUT}/AmazonRootCA1.pem', "wb") as f:
+    pem = requests.get('https://www.amazontrust.com/repository/AmazonRootCA1.pem')
+    f.write(pem.content)
 
 with open(f'{OUT}/mqtt.json', "w") as f:
     f.write(connectivity_info)
+
+iot_thing_name = ensure_config.config['client_iot_thing']['iot_thing_name']
+region = ensure_config.config["aws"]["region"]
+
+with open(f'{OUT}/thing_info.json', "w") as f:
+    cmd = f"aws iot describe-thing --thing-name {iot_thing_name} --output json"
+    f.write(subprocess.check_output(cmd, shell=True).decode('utf-8'))
+
+with open(f'{OUT}/basic_discovery.sh', "w") as f:
+    s = f"""python3 basic_discovery.py \\
+        --thing_name {iot_thing_name} \\
+        --topic 'clients/{iot_thing_name}/hello/world' \\
+        --message 'Hello World!' \\
+        --ca_file AmazonRootCA1.pem \\
+        --cert device.pem.crt \\
+        --key private.pem.key \\
+        --region {region} \\"""
+    f.write(s)
+
+os.chmod(f'{OUT}/basic_discovery.sh', 0o755)
