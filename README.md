@@ -17,7 +17,7 @@ Other than that, the project does nothing, so it's useless, though it's potentia
 
 ## Why?
 
-* Wear a devops hat, try out Terraform.
+* Try to wear a devops hat and try out Terraform.
 * The complexity of AWS IoT projects feels challenging. It called me.
 
 ## Next steps?
@@ -134,3 +134,6 @@ python3 pubsub.py --endpoint ??? --port ??? --cert device.pem.crt --key private.
 
 * ##### `terraform destroy`
 
+# Resource diagram
+
+![resources](resources.png)
