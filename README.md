@@ -1,8 +1,8 @@
-# Useless Greengrass project
+# DosPesos – a useless Greengrass project
 
 ## Overview
 
-This project is an experiment in automation of the creation/provisionong of AWS Greengrass core devices and connected IoT things. You create and deploy any number of Greengrass cores, and any number of IoT things connected to the cores, by running CLI commands.
+*DosPesos* is an exercise in in automation of the creation/provisionong of AWS Greengrass core devices and connected IoT things. You create and deploy any number of Greengrass cores, and any number of IoT things connected to the cores, by running CLI commands. Deprovisioning/uninsallation is automatic as well.
 
 Automation takes care of:
 
@@ -13,14 +13,12 @@ Automation takes care of:
 
 The user only has to specify the AWS region and the desired names for these devices.
 
-Deprovisioning/uninsallation is automatic as well.
-
 Other than that, the project does nothing, so it's useless, though it's potentially useful as a project template.
 
 ## Why?
 
-* Taste the life of a devops engineer. Try out Terraform.
-* The complexity of AWS IoT projects felt challenging, and challenge accepted.
+* Get some devops skills. Try out Terraform.
+* The complexity of AWS IoT projects felt challenging, challenge was accepted.
 * Head start for a potential Greengrass project.
 * Fun.
 
@@ -32,4 +30,4 @@ Other than that, the project does nothing, so it's useless, though it's potentia
 ## Further reading
 
 * [Usage instructions](docs/usage.md)
-* [Implementation description](docs/implementation.md)
+* [Implementation notes](docs/implementation.md)
