@@ -5,9 +5,11 @@ from pathlib import Path
 from do import ensure_config, util
 
 CONFIG = 'config.yml'
+config = {}
 
 
 def do():
+    global config
     os.chdir(Path(__file__).parents[1])
 
     print("Ensuring thing config")
