@@ -5,33 +5,38 @@ from pathlib import Path
 from do import ensure_aws_cli, util
 from edge.do import ensure_aws_resources, ensure_config, run_terraform
 
-print("Configuring development environment for edge")
 
-paths = {
-    'src': 'scripts/src',
-    'out': 'scripts/out',
+def do():
+    print("Configuring development environment for edge")
 
-    'greengrass_setup': {
-        'download_dir': '/tmp'
-    },
-    'certs': 'terraform/greengrass-v2-certs'
-}
+    paths = {
+        'src': 'scripts/src',
+        'out': 'scripts/out',
 
-context = ensure_config.config | {
-    'thingArn': ensure_aws_resources.thing_arn,
-    'iotDataEndpoint': ensure_aws_resources.data_endpoint,
-    'iotCredEndpoint': ensure_aws_resources.cred_endpoint,
-    'paths': paths
-}
+        'greengrass_setup': {
+            'download_dir': '/tmp'
+        },
+        'certs': 'terraform/greengrass-v2-certs'
+    }
 
-os.chdir(Path(__file__).parents[1])
+    context = ensure_config.config | {
+        'thingArn': ensure_aws_resources.thing_arn,
+        'iotDataEndpoint': ensure_aws_resources.data_endpoint,
+        'iotCredEndpoint': ensure_aws_resources.cred_endpoint,
+        'paths': paths
+    }
 
-if os.path.isdir(paths["out"]):
-    shutil.rmtree(paths["out"])
-shutil.copytree(paths["src"], paths["out"])
+    os.chdir(Path(__file__).parents[1])
 
-shutil.copy(f"{paths['certs']}/device.pem.crt", f"{paths['out']}/greengrass")
-shutil.copy(f"{paths['certs']}/private.pem.key", f"{paths['out']}/greengrass")
+    if os.path.isdir(paths["out"]):
+        shutil.rmtree(paths["out"])
+    shutil.copytree(paths["src"], paths["out"])
 
-print(f"    Writing edge device setup scripts to `{paths['out']}`")
-util.expand_jinja_templates(paths["out"], context)
+    shutil.copy(f"{paths['certs']}/device.pem.crt", f"{paths['out']}/greengrass")
+    shutil.copy(f"{paths['certs']}/private.pem.key", f"{paths['out']}/greengrass")
+
+    print(f"    Writing edge device setup scripts to `{paths['out']}`")
+    util.expand_jinja_templates(paths["out"], context)
+
+
+do()

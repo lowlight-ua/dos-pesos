@@ -5,15 +5,24 @@ from pathlib import Path
 
 from do import util
 
-CONFIG = 'config.yml'
 
-os.chdir(Path(__file__).parents[1])
+config = {}
 
-print("Ensuring global config")
 
-if not os.path.isfile(CONFIG):
-    shutil.copyfile(CONFIG + '.template', CONFIG)
+def do():
+    global config
+    CONFIG = 'config.yml'
 
-config = util.read_config(CONFIG)
-if util.contains_none(config):
-    util.stop("Please fill out all values in " + os.path.abspath(CONFIG))
+    os.chdir(Path(__file__).parents[1])
+
+    print("Ensuring global config")
+
+    if not os.path.isfile(CONFIG):
+        shutil.copyfile(CONFIG + '.template', CONFIG)
+
+    config = util.read_config(CONFIG)
+    if util.contains_none(config):
+        util.stop("Please fill out all values in " + os.path.abspath(CONFIG))
+
+
+do()
