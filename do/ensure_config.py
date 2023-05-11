@@ -10,6 +10,11 @@ config = {}
 
 
 def do():
+    """
+    Reads the global config file and makes sure it's completely 
+    initialized by the user.
+    """
+
     global config
     CONFIG = 'config.yml'
 

@@ -5,6 +5,9 @@ from do import util
 
 
 def do():
+    """
+    Ensures AWS CLI is installed and configured with credentials.
+    """
 
     print("Checking AWS CLI")
 
