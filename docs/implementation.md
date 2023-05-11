@@ -36,7 +36,7 @@ The project pertains to a number of execution contexts. It contains files that a
 
 >  *Note:* In DosPesos the process of edge device provisioning is well defined (installation of AWS Greengrass core). However, it doesn't care what client things are used with the core, so provisioning client things is out of scope. *DosPesos*, however, provides artifacts that allow to test the edge deployment by using clients from AWS IoT SDK samples.
 
-![sequence](sequence.png)
+<img src="sequence.png" alt="sequence" style="zoom:50%;" />
 
 # Resource diagram
 
