@@ -2,7 +2,7 @@
 
 ## Overview
 
-*DosPesos* is an exercise in the automation of creation/provisionng of AWS Greengrass cores (edge devices) and the connected IoT things. You create and deploy any number of Greengrass cores, and any number of IoT things connected to the cores, by running CLI commands. Deprovisioning/uninsallation is automatic as well.
+*DosPesos* is an exercise in the automation of creation/provisioning of AWS Greengrass cores (edge devices) and the connected IoT things. You create and deploy any number of Greengrass cores, and any number of IoT things connected to the cores, by running CLI commands. Deprovisioning/uninstallation is automatic as well.
 
 Automation takes care of:
 
