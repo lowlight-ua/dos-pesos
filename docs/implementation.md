@@ -40,7 +40,7 @@ The project pertains to a number of execution contexts. It contains files that a
 
 # Resource diagram
 
-The diagram below illustrates the AWS resources provisioned by the solution, and how they relate to stuff that's happening on the edge/thing machines.
+The diagram below illustrates the AWS resources provisioned by the solution, and how they relate to stuff that's happening on the edge/thing machines. I drew it mostly for my own understanding, it's not necessary to use *DosPesos*.
 
 
 
