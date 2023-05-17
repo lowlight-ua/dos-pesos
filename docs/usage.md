@@ -106,3 +106,6 @@ python3 pubsub.py --endpoint ??? --port ??? --cert device.pem.crt --key private.
 * `cd thing/terraform`
 * `terraform destroy`
 
+# Checking what Things you have provisioned
+
+Active Things (edge devices and client things) can incur charges to your AWS account. Use `list_things.sh` to show what edges and client things you have provisioned in a deployment.

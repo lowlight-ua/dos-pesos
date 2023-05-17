@@ -1,0 +1,1 @@
+This directory pertains to the infrastructure related to client IoT things.

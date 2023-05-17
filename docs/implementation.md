@@ -16,9 +16,9 @@ The Python scripts that orchestrate all operations reside in directories named `
 * One step may compute outputs that another step could use. Outputs are written to the module variables, and can be accessed by accessing `step.variable` after `import`ing `step`. Since importing a step executes the step, this ensures that the outputs of the step are ready before being read.
 * Python only executes an imported module once, even though there may be many import directives. So it's fine to import a dependency from multiple steps. The dependency will be executed only once, but its results can be available to many other steps.
 
-### Why not a normal build system?
-
-The amount of functionality is so small that bothering with something like `just`, `waf` or `bazel` felt like overkill. Especially when plain Python can do so much heavy lifting already.
+> *Q*: Why not use a full build system? 
+>
+> *A*: The amount of functionality is so small that bothering with something like `just`, `waf` or `bazel` felt like overkill. Especially when plain Python can do so much heavy lifting already.
 
 ## Configuration enforcement
 
@@ -29,6 +29,10 @@ The goal of automation requires that the user specifies configuration values exa
 The configuration specified on a development machine must be respected in a variety of different contexts and inside different tools. For example, when running Terraform on the development machine, or when installing Greengrass core on a completely different machine (the edge device).
 
 To solve this, *DosPesos* uses code generation from jinja2 templates. The template expansion is parametrized by the values specified in the configuration files. (Facts gathered during the preceding automation steps are also used as template parameters.) After the files – such as Terraform variables or installation scripts – are expanded, they can be used directly. The process of generating configuration-dependent files is called "setting up the working copy of the project". 
+
+> *Q:*  Why not `cookiecutter` or `cruft`? 
+>
+> *A:* These tools are for generating completely new projects, not the configurations of working copies of the same project. In other words, I wanted to retain the checked out working copy as "git committable" as possible. Instead of generating a completely fresh project tree somewhere, during the configuration phase the current project tree is tweaked inline, and the expanded files are `.gitignore`'d. 
 
 # Execution contexts
 
