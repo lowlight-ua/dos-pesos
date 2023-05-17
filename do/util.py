@@ -1,11 +1,12 @@
 import os
 import subprocess
+from typing import Any
 
 import yaml
 from jinja2 import Environment, FileSystemLoader, StrictUndefined
 
 
-def contains_none(obj: dict):
+def contains_none(obj: dict[str, Any]) -> bool:
     """
     Returns True if any value inside `obj` is a None.
     """
@@ -21,28 +22,20 @@ def contains_none(obj: dict):
     else:
         return obj is None
     
+    return False
+    
 
-def stop(msg: str):
+def stop(msg: str) -> None:
     print(msg)
     exit()    
 
 
-def chdir_parent(path):
-    """
-    Changes the working directory of the script to the parent directory 
-    of the script. Since the scripts reside in a `do` directory, to avoid
-    using "../" everywhere, we just cd to parent.
-    """
-
-    os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(path))))
-
-
-def read_config(path):
+def read_config(path: str) -> Any:
     with open(path) as f:
         return yaml.safe_load(f.read())
 
 
-def expand_jinja_templates(base_dir, context):
+def expand_jinja_templates(base_dir: str, context: dict[str,str]) -> None:
     """
     Traverse a directory and expand all the found jinja templates. 
     After expansion, the templates will be deleted.
@@ -81,7 +74,7 @@ def expand_jinja_templates(base_dir, context):
                 os.remove(os.path.join(root, file))
 
 
-def check_program_availability(program_name):
+def check_program_availability(program_name: str) -> None:
     print(f"Checking if {program_name} is installed")
     try:
         subprocess.run([program_name, '--version'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -89,7 +82,7 @@ def check_program_availability(program_name):
         stop(f'{program_name} is not installed. Please install it and start over.')
 
 
-def check_successful_execution(command):
+def check_successful_execution(command: str) -> bool:
     try:
         subprocess.check_call(command, shell=True)
         return True
