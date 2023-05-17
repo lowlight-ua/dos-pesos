@@ -13,6 +13,10 @@ cred_endpoint = None
 
 
 def do():
+    """
+    Get info about the provisioned AWS resources for usage in some of the templates.
+    """
+    
     global thing_arn, data_endpoint, cred_endpoint
 
     os.chdir(Path(__file__).parents[1])

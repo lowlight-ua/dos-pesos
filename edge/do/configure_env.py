@@ -7,6 +7,12 @@ from edge.do import ensure_config, run_terraform, ensure_aws_resources
 
 
 def do():
+    """
+    Configures the development environment for the edge device as
+    specified in the configuration files. Generates file that can be used
+    to provision a Greengrass core.
+    """
+
     print("Configuring development environment for edge")
 
     paths = {

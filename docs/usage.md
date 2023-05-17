@@ -1,6 +1,6 @@
 # Creating account-level AWS resources
 
-## Creating principal for automation
+## Creating user for automation
 
 This step is not automated, because it requires a root access to the AWS account. The result of this step is a user on behalf of which the scripts will run.
 
@@ -15,7 +15,7 @@ This step is not automated, because it requires a root access to the AWS account
 
 ## Global resources provisioning
 
-These steps will provision account-leve AWS resources required for the creation and operation of the edge devices. 
+These steps will provision account-level AWS resources required for the creation and operation of the edge devices. 
 
 *These steps must only be done once per AWS account.*
 
@@ -41,7 +41,7 @@ These steps will set up a new Greengrass core device by provisioning the necessa
 * Install Python dependencies: `pip3 install -r requirements.txt`
 * Run the script `./do.sh edge/do/configure_env`
     * You will be guided through the necessary steps to set up dependencies, initialize configuration, and provision AWS resources necessary for the edge device.
-    * Edge device provsioning scripts will be generated in `edge/scripts/out`.
+    * Edge device provisioning scripts will be generated in `edge/scripts/out`.
 
 **(2) On the edge device:**
 

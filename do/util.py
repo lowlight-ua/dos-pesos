@@ -5,7 +5,11 @@ import yaml
 from jinja2 import Environment, FileSystemLoader, StrictUndefined
 
 
-def contains_none(obj):
+def contains_none(obj: dict):
+    """
+    Returns True if any value inside `obj` is a None.
+    """
+
     if isinstance(obj, dict):
         for k, v in obj.items():
             if contains_none(v):
@@ -24,6 +28,12 @@ def stop(msg: str):
 
 
 def chdir_parent(path):
+    """
+    Changes the working directory of the script to the parent directory 
+    of the script. Since the scripts reside in a `do` directory, to avoid
+    using "../" everywhere, we just cd to parent.
+    """
+
     os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(path))))
 
 
@@ -33,12 +43,20 @@ def read_config(path):
 
 
 def expand_jinja_templates(base_dir, context):
+    """
+    Traverse a directory and expand all the found jinja templates. 
+    After expansion, the templates will be deleted.
+    :param base_dir: The directory to process.
+    :param context: A dictionary containing the template parameters.
+    """
+
     # Set up Jinja environment
     env = Environment(loader=FileSystemLoader(base_dir), undefined=StrictUndefined)
 
     # Recursively walk through the directory
     for root, _, files in os.walk(base_dir):
         for file in files:
+
             # Check if the file has a .j2 extension
             if file.endswith(".j2"):
                 # Remove the .j2 extension from the filename
