@@ -1,0 +1,349 @@
+{
+    "extension": "linecounter",
+    "version": "0.2.7",
+    "workspace": "c:\\Users\\yp\\Documents\\dos_pesos\\dos-pesos",
+    "linecount": [
+        {
+            "version": "0.2.7",
+            "counttime": "2023-05-17 19:44:48",
+            "filesum": 47,
+            "codesum": 970,
+            "commentsum": 14,
+            "blanksum": 368,
+            "statistics": {
+                "": {
+                    "code": 63,
+                    "comment": 0,
+                    "blank": 17
+                },
+                ".txt": {
+                    "code": 3,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".md": {
+                    "code": 106,
+                    "comment": 1,
+                    "blank": 63
+                },
+                ".sh": {
+                    "code": 12,
+                    "comment": 1,
+                    "blank": 5
+                },
+                ".tf": {
+                    "code": 281,
+                    "comment": 2,
+                    "blank": 91
+                },
+                ".py": {
+                    "code": 275,
+                    "comment": 8,
+                    "blank": 161
+                },
+                ".hcl": {
+                    "code": 141,
+                    "comment": 0,
+                    "blank": 7
+                },
+                ".template": {
+                    "code": 16,
+                    "comment": 0,
+                    "blank": 7
+                },
+                ".j2": {
+                    "code": 73,
+                    "comment": 2,
+                    "blank": 17
+                }
+            },
+            "filelist": [
+                {
+                    "blank": 0,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": ".gitignore"
+                },
+                {
+                    "blank": 5,
+                    "code": 17,
+                    "comment": 0,
+                    "filename": "account\\terraform\\.gitignore"
+                },
+                {
+                    "blank": 2,
+                    "code": 41,
+                    "comment": 0,
+                    "filename": "account\\terraform\\.terraform.lock.hcl"
+                },
+                {
+                    "blank": 26,
+                    "code": 129,
+                    "comment": 0,
+                    "filename": "account\\terraform\\main.tf"
+                },
+                {
+                    "blank": 4,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "config.yml.template"
+                },
+                {
+                    "blank": 1,
+                    "code": 4,
+                    "comment": 1,
+                    "filename": "do.sh"
+                },
+                {
+                    "blank": 7,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "do\\ensure_aws_cli.py"
+                },
+                {
+                    "blank": 13,
+                    "code": 17,
+                    "comment": 0,
+                    "filename": "do\\ensure_config.py"
+                },
+                {
+                    "blank": 27,
+                    "code": 51,
+                    "comment": 8,
+                    "filename": "do\\util.py"
+                },
+                {
+                    "blank": 13,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "docs\\implementation.md"
+                },
+                {
+                    "filename": "docs\\resources.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "docs\\sequence.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 38,
+                    "code": 70,
+                    "comment": 1,
+                    "filename": "docs\\usage.md"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "edge\\.gitignore"
+                },
+                {
+                    "blank": 2,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "edge\\config.yml.template"
+                },
+                {
+                    "blank": 14,
+                    "code": 30,
+                    "comment": 0,
+                    "filename": "edge\\do\\configure_env.py"
+                },
+                {
+                    "blank": 15,
+                    "code": 28,
+                    "comment": 0,
+                    "filename": "edge\\do\\ensure_aws_resources.py"
+                },
+                {
+                    "blank": 12,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "edge\\do\\ensure_config.py"
+                },
+                {
+                    "blank": 11,
+                    "code": 16,
+                    "comment": 0,
+                    "filename": "edge\\do\\run_terraform.py"
+                },
+                {
+                    "blank": 10,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "edge\\do\\write_terraform_vars.py"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "edge\\scripts\\.gitignore"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "edge\\scripts\\src\\components\\check_deployment.sh.j2"
+                },
+                {
+                    "blank": 5,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "edge\\scripts\\src\\components\\deployment.json.j2"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "edge\\scripts\\src\\components\\list.sh.j2"
+                },
+                {
+                    "blank": 3,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "edge\\scripts\\src\\components\\setup.sh"
+                },
+                {
+                    "blank": 0,
+                    "code": 16,
+                    "comment": 0,
+                    "filename": "edge\\scripts\\src\\greengrass\\config.yml.j2"
+                },
+                {
+                    "blank": 11,
+                    "code": 27,
+                    "comment": 2,
+                    "filename": "edge\\scripts\\src\\greengrass\\setup.sh.j2"
+                },
+                {
+                    "blank": 1,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "edge\\scripts\\src\\greengrass\\uninstall.sh.j2"
+                },
+                {
+                    "blank": 6,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "edge\\terraform\\.gitignore"
+                },
+                {
+                    "blank": 2,
+                    "code": 41,
+                    "comment": 0,
+                    "filename": "edge\\terraform\\.terraform.lock.hcl"
+                },
+                {
+                    "blank": 26,
+                    "code": 51,
+                    "comment": 1,
+                    "filename": "edge\\terraform\\main.tf"
+                },
+                {
+                    "blank": 2,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "edge\\terraform\\outputs.tf"
+                },
+                {
+                    "blank": 2,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "edge\\terraform\\variables.tf"
+                },
+                {
+                    "blank": 1,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "list_things.sh"
+                },
+                {
+                    "blank": 12,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "README.md"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "requirements.txt"
+                },
+                {
+                    "filename": "resources.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": "thing\\.gitignore"
+                },
+                {
+                    "blank": 1,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "thing\\config.yml.template"
+                },
+                {
+                    "blank": 20,
+                    "code": 35,
+                    "comment": 0,
+                    "filename": "thing\\do\\configure_env.py"
+                },
+                {
+                    "blank": 11,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "thing\\do\\ensure_config.py"
+                },
+                {
+                    "blank": 11,
+                    "code": 16,
+                    "comment": 0,
+                    "filename": "thing\\do\\run_terraform.py"
+                },
+                {
+                    "blank": 10,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "thing\\do\\write_terraform_vars.py"
+                },
+                {
+                    "blank": 6,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "thing\\terraform\\.gitignore"
+                },
+                {
+                    "blank": 3,
+                    "code": 59,
+                    "comment": 0,
+                    "filename": "thing\\terraform\\.terraform.lock.hcl"
+                },
+                {
+                    "blank": 32,
+                    "code": 66,
+                    "comment": 1,
+                    "filename": "thing\\terraform\\main.tf"
+                },
+                {
+                    "blank": 3,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "thing\\terraform\\variables.tf"
+                }
+            ]
+        }
+    ]
+}

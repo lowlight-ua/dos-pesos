@@ -7,6 +7,11 @@ from edge.do import ensure_config
 
 
 def do():
+    """
+    Write out `terraform.tfvars.json` which provides values for Terraform variables
+    that depend on the project configuration values.
+    """
+
     master_cfg = ensure_config.config
 
     os.chdir(Path(__file__).parents[1])

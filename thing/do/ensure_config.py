@@ -9,6 +9,11 @@ config = {}
 
 
 def do():
+    """
+    Reads the "thing" part of the config file and makes sure it's completely 
+    initialized by the user.
+    """
+
     global config
     os.chdir(Path(__file__).parents[1])
 

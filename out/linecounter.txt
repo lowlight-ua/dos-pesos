@@ -1,0 +1,72 @@
+===============================================================================
+EXTENSION NAME : linecounter
+EXTENSION VERSION : 0.2.7
+-------------------------------------------------------------------------------
+count time : 2023-05-17 19:44:48
+count workspace : c:\Users\yp\Documents\dos_pesos\dos-pesos
+total files : 47
+total code lines : 970
+total comment lines : 14
+total blank lines : 368
+
+    statistics
+   |      extension|     total code|  total comment|    total blank|percent|
+   -------------------------------------------------------------------------
+   |               |             63|              0|             17|    6.5|
+   |           .txt|              3|              0|              0|   0.31|
+   |            .md|            106|              1|             63|     11|
+   |            .sh|             12|              1|              5|    1.2|
+   |            .tf|            281|              2|             91|     29|
+   |            .py|            275|              8|            161|     28|
+   |           .hcl|            141|              0|              7|     15|
+   |      .template|             16|              0|              7|    1.6|
+   |            .j2|             73|              2|             17|    7.5|
+   -------------------------------------------------------------------------
+.gitignore, code is 2, comment is 0, blank is 0.
+account\terraform\.gitignore, code is 17, comment is 0, blank is 5.
+account\terraform\.terraform.lock.hcl, code is 41, comment is 0, blank is 2.
+account\terraform\main.tf, code is 129, comment is 0, blank is 26.
+config.yml.template, code is 8, comment is 0, blank is 4.
+do.sh, code is 4, comment is 1, blank is 1.
+do\ensure_aws_cli.py, code is 9, comment is 0, blank is 7.
+do\ensure_config.py, code is 17, comment is 0, blank is 13.
+do\util.py, code is 51, comment is 8, blank is 27.
+docs\implementation.md, code is 15, comment is 0, blank is 13.
+docs\resources.png, it is a binary file.
+docs\sequence.png, it is a binary file.
+docs\usage.md, code is 70, comment is 1, blank is 38.
+edge\.gitignore, code is 3, comment is 0, blank is 0.
+edge\config.yml.template, code is 5, comment is 0, blank is 2.
+edge\do\configure_env.py, code is 30, comment is 0, blank is 14.
+edge\do\ensure_aws_resources.py, code is 28, comment is 0, blank is 15.
+edge\do\ensure_config.py, code is 18, comment is 0, blank is 12.
+edge\do\run_terraform.py, code is 16, comment is 0, blank is 11.
+edge\do\write_terraform_vars.py, code is 18, comment is 0, blank is 10.
+edge\scripts\.gitignore, code is 1, comment is 0, blank is 0.
+edge\scripts\src\components\check_deployment.sh.j2, code is 1, comment is 0, blank is 0.
+edge\scripts\src\components\deployment.json.j2, code is 23, comment is 0, blank is 5.
+edge\scripts\src\components\list.sh.j2, code is 1, comment is 0, blank is 0.
+edge\scripts\src\components\setup.sh, code is 5, comment is 0, blank is 3.
+edge\scripts\src\greengrass\config.yml.j2, code is 16, comment is 0, blank is 0.
+edge\scripts\src\greengrass\setup.sh.j2, code is 27, comment is 2, blank is 11.
+edge\scripts\src\greengrass\uninstall.sh.j2, code is 5, comment is 0, blank is 1.
+edge\terraform\.gitignore, code is 19, comment is 0, blank is 6.
+edge\terraform\.terraform.lock.hcl, code is 41, comment is 0, blank is 2.
+edge\terraform\main.tf, code is 51, comment is 1, blank is 26.
+edge\terraform\outputs.tf, code is 12, comment is 0, blank is 2.
+edge\terraform\variables.tf, code is 10, comment is 0, blank is 2.
+list_things.sh, code is 3, comment is 0, blank is 1.
+README.md, code is 21, comment is 0, blank is 12.
+requirements.txt, code is 3, comment is 0, blank is 0.
+resources.png, it is a binary file.
+thing\.gitignore, code is 2, comment is 0, blank is 0.
+thing\config.yml.template, code is 3, comment is 0, blank is 1.
+thing\do\configure_env.py, code is 35, comment is 0, blank is 20.
+thing\do\ensure_config.py, code is 18, comment is 0, blank is 11.
+thing\do\run_terraform.py, code is 16, comment is 0, blank is 11.
+thing\do\write_terraform_vars.py, code is 19, comment is 0, blank is 10.
+thing\terraform\.gitignore, code is 19, comment is 0, blank is 6.
+thing\terraform\.terraform.lock.hcl, code is 59, comment is 0, blank is 3.
+thing\terraform\main.tf, code is 66, comment is 1, blank is 32.
+thing\terraform\variables.tf, code is 13, comment is 0, blank is 3.
+===============================================================================

@@ -7,6 +7,9 @@ from thing.do import write_terraform_vars
 
 
 def do():
+    """Execute the Terraform scripts to provision AWS resources required for
+    a client IoT thing."""
+
     os.chdir(Path(__file__).parents[1])
 
     print("Running terraform to provision AWS resources required for the edge device")

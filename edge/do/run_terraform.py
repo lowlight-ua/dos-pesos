@@ -7,6 +7,9 @@ from edge.do import write_terraform_vars
 
 
 def do():
+    """Execute the Terraform scripts to provision AWS resources required for
+    a Greengrass core device."""
+
     os.chdir(Path(__file__).parents[1])
 
     print("Running terraform to provision AWS resources required for the edge device")

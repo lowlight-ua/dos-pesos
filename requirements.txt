@@ -1,3 +1,2 @@
-dotmap
 pyyaml
 jinja2
