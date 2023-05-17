@@ -27,6 +27,13 @@ Other than that, the project does nothing, so it's useless, though it's potentia
 * Introduce a useless custom Greengrass component (for message filtering/decoration)
 * Introduce a useless back end, such as aS3 bucket for messages
 
+## Terminology
+
+| Term       | Meaning                                                      |
+| ---------- | ------------------------------------------------------------ |
+| Project    | A working copy of *DosPesos* on a computer, that has been set up according to user-provided configuration values. |
+| Deployment | The combination of all AWS *DosPesos* resources provisioned on an AWS account. |
+
 ## Further reading
 
 * [Usage instructions](docs/usage.md)
