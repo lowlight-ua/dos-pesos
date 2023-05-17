@@ -39,8 +39,8 @@ These steps will set up a new Greengrass core device by provisioning the necessa
 
 * Install Python and Pip.
 * Install Python dependencies: `pip3 install -r requirements.txt`
-* Run the script `./do.sh edge/do/configure_env`
-    * You will be guided through the necessary steps to set up dependencies, initialize configuration, and provision AWS resources necessary for the edge device.
+* Run the script `./do.sh edge/do/configure_project`
+    * You will be guided through the necessary steps to set up dependencies, initialize configuration, set up the working copy of the project, and provision AWS resources necessary for the edge device.
     * Edge device provisioning scripts will be generated in `edge/scripts/out`.
 
 **(2) On the edge device:**
@@ -78,8 +78,8 @@ These steps will set up a new IoT thing by provisioning the necessary AWS resour
 
 **On the development machine:**
 
-* Run the script `./do.sh thing/do/configure_env`
-    * You will be guided through the necessary steps to set up dependencies, initialize configuration, and provision AWS resources necessary for the edge device.
+* Run the script `./do.sh thing/do/configure_project`
+    * You will be guided through the necessary steps to set up dependencies, initialize configuration, set up the working copy of the project, and provision AWS resources necessary for the edge device.
     * Files required to provision the IoT thing will be generated in `thing/out`.
 
 **On the IoT thing machine:**

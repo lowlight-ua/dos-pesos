@@ -28,7 +28,7 @@ The goal of automation requires that the user specifies configuration values exa
 
 The configuration specified on a development machine must be respected in a variety of different contexts and inside different tools. For example, when running Terraform on the development machine, or when installing Greengrass core on a completely different machine (the edge device).
 
-To solve this, *DosPesos* uses code generation from jinja2 templates. The template expansion is parametrized by the values specified in the configuration files. Facts gathered during the preceding automation steps are also used as template parameters. After the files (such as Terraform variables or installation scripts) are expanded, they can be used directly.
+To solve this, *DosPesos* uses code generation from jinja2 templates. The template expansion is parametrized by the values specified in the configuration files. (Facts gathered during the preceding automation steps are also used as template parameters.) After the files – such as Terraform variables or installation scripts – are expanded, they can be used directly. The process of generating configuration-dependent files is called "setting up the working copy of the project". 
 
 # Execution contexts
 

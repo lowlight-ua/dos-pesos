@@ -13,7 +13,7 @@ from thing.do import ensure_config, run_terraform
 
 def do() -> None:
     """
-    Configures the development environment for the client IoT thing as
+    Configures the working copy of the project for the client IoT thing as
     specified in the configuration files. Generates file that can be used
     to provision a client IoT thing.
     """
