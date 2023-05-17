@@ -8,7 +8,7 @@ CONFIG = 'config.yml'
 config = {}
 
 
-def do():
+def do() -> None:
     """
     Reads the "thing" part of the config file and makes sure it's completely 
     initialized by the user.

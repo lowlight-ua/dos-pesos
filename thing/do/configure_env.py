@@ -11,7 +11,7 @@ OUT = 'out'
 from thing.do import ensure_config, run_terraform
 
 
-def do():
+def do() -> None:
     """
     Configures the development environment for the client IoT thing as
     specified in the configuration files. Generates file that can be used

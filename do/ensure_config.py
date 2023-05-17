@@ -9,7 +9,7 @@ from do import util
 config = {}
 
 
-def do():
+def do() -> None:
     """
     Reads the global config file and makes sure it's completely 
     initialized by the user.

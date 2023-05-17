@@ -6,7 +6,7 @@ from do import util
 from thing.do import ensure_config
 
 
-def do():
+def do() -> None:
     """
     Write out `terraform.tfvars.json` which provides values for Terraform variables
     that depend on the project configuration values.

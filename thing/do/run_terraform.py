@@ -6,7 +6,7 @@ from do import ensure_aws_cli, util
 from thing.do import write_terraform_vars
 
 
-def do():
+def do() -> None:
     """Execute the Terraform scripts to provision AWS resources required for
     a client IoT thing."""
 

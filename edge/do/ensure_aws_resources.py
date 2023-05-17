@@ -12,7 +12,7 @@ data_endpoint = None
 cred_endpoint = None
 
 
-def do():
+def do() -> None:
     """
     Get info about the provisioned AWS resources for usage in some of the templates.
     """

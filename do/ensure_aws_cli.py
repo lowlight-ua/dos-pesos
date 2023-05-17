@@ -4,7 +4,7 @@ import sys
 from do import util
 
 
-def do():
+def do() -> None:
     """
     Ensures AWS CLI is installed and configured with credentials.
     """

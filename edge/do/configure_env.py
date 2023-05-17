@@ -6,7 +6,7 @@ from do import ensure_aws_cli, util
 from edge.do import ensure_config, run_terraform, ensure_aws_resources
 
 
-def do():
+def do() -> None:
     """
     Configures the development environment for the edge device as
     specified in the configuration files. Generates file that can be used
