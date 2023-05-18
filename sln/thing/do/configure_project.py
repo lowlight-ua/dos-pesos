@@ -8,7 +8,7 @@ import requests
 CERTS = 'terraform/client-iot-thing-certs'
 OUT = 'out'
 
-from thing.do import ensure_config, run_terraform
+from sln.thing.do import ensure_config, run_terraform
 
 
 def do() -> None:
