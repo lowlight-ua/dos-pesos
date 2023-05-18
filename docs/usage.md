@@ -1,10 +1,10 @@
-# Creating account-level AWS resources
+# Creating instance-level AWS resources
 
 ## Creating user for automation
 
 This step is not automated, because it requires a root access to the AWS account. The result of this step is a user on behalf of which the scripts will run.
 
-*These steps must only be done once per AWS account.*
+*These steps must only be done once per instance.*
 
 * Open the AWS IAM page in AWS console.
 * Create a user and attach the following policies:
@@ -15,15 +15,15 @@ This step is not automated, because it requires a root access to the AWS account
 
 ## Global resources provisioning
 
-These steps will provision account-level AWS resources required for the creation and operation of the edge devices. 
+These steps will provision instance-level AWS resources required for the creation and operation of the edge devices. 
 
-*These steps must only be done once per AWS account.*
+*These steps must only be done once per AWS instance.*
 
 **On any machine:**
 
 * Install AWS CLI and log in using the credentials of the user created above. 
 * Run:
-    * `cd account/terraform`
+    * `cd instance/terraform`
     * `terraform init`
     * `terraform apply`
 
