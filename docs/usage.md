@@ -23,7 +23,7 @@ These steps will provision instance-level AWS resources required for the creatio
 
 * Install AWS CLI and log in using the credentials of the user created above. 
 * Run:
-    * `cd instance/terraform`
+    * `cd sln/instance/terraform`
     * `terraform init`
     * `terraform apply`
 
@@ -75,9 +75,9 @@ It will also generate files that will help you set up a temporary software-defin
 
 **On the development machine:**
 
-* Run the script `./do.sh thing/do/configure_project`
+* Run the script `./do.sh sln/thing/do/configure_project`
     * You will be guided through the necessary steps to set up dependencies, initialize configuration, set up the working copy of the project, and provision AWS resources necessary for the edge device.
-    * Files required to provision the IoT thing will be generated in `thing/out`.
+    * Files required to provision the IoT thing will be generated in `sln/thing/out`.
 
 **On the IoT thing machine:**
 
@@ -88,7 +88,7 @@ This section describes how to create a temporary Thing to test the connection to
     * `git clone https://github.com/aws/aws-iot-device-sdk-python-v2.git`
     * In the cloned repo: `python3 -m pip install --user ./aws-iot-device-sdk-python-v2`
 * Navigate to `aws-iot-device-sdk-python-v2/samples`
-* From `thing/out` on the development machine, copy the files here.
+* From `sln/thing/out` on the development machine, copy the files here.
 * **Option 1** (uses cloud discovery): Run `basic_discovery.sh`. You should see messages indicating that the IoT thing connected to Greengrass core and sent a few messages.
 * **Option 2**: (does not use cloud discovery) (Todo automate) Run the following. Replace "???" with the info from `mqtt.json`, and copy `ca.pem` from `<greengrass_core_rootpath>/work/aws.greengrass.clientdevices.Auth/ca.pem` on the edge device machine. The `client_id` is the name of your client thing from the config you provided.
 
@@ -100,7 +100,7 @@ python3 pubsub.py --endpoint ??? --port ??? --cert device.pem.crt --key private.
 
 **On the development machine:**
 
-* `cd thing/terraform`
+* `cd sln/thing/terraform`
 * `terraform destroy`
 
 # Checking what Things you have provisioned
