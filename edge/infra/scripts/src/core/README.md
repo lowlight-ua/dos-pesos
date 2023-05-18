@@ -1,1 +1,1 @@
-These scripts are executed on the edge device to install Greengrass core.
+These scripts are executed on the edge device to install/uninstall Greengrass core.

@@ -1,1 +1,5 @@
-This directory pertains to the infrastructure related to edge devices (AWS greengrass core devices).
+Infrastructure concerns related to edge devices (AWS Greengrass core devices), such as:
+
+* AWS resources for the Greengrass core,
+* Greengrass core installation scripts,
+* AWS-provided component installation scripts.

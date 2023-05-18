@@ -1,1 +1,1 @@
-This directory contains Terraform scripts required to provision account-level resources for the instance.
+Terraform scripts required to provision account-level resources for the instance.

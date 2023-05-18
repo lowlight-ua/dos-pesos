@@ -67,7 +67,9 @@ Also in this directory:
 
 ## Creating an IoT thing
 
-These steps will set up a new IoT thing by provisioning the necessary AWS resources, associating the IoT thing with the Greengrass core, and generating files to provision the IoT thing on the desired machine. The IoT thing will then be ready to connect to the Edge device created in the previous step. 
+These steps will set up a new IoT thing by provisioning the necessary AWS resources, and associating the IoT thing with the Greengrass core. 
+
+It will also generate files that will help you set up a temporary software-defined IoT thing in order to test the connection to the Greengrass core (this IoT thing will then be ready to connect to the Edge device created in the previous step). Using the credentials and connection information, you will later be able to configure an actual IoT Thing.
 
 *You may execute these steps many times for every IoT thing you wish to create.*
 
@@ -79,7 +81,7 @@ These steps will set up a new IoT thing by provisioning the necessary AWS resour
 
 **On the IoT thing machine:**
 
-This section describes how to create a temporary Thing for testing purposes.
+This section describes how to create a temporary Thing to test the connection to the Greengrass core.
 
 * Install Python and Pip.
 * Install the AWS IoT Device SDK v2 for Python:
