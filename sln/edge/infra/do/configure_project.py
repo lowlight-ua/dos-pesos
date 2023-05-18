@@ -19,10 +19,7 @@ def do() -> None:
     paths = {
         'src': 'scripts/src',
         'out': 'scripts/out',
-
-        'greengrass_setup': {
-            'download_dir': '/tmp'
-        },
+        'download_dir': '/tmp',
         'certs': 'terraform/greengrass-v2-certs'
     }
 
@@ -30,7 +27,7 @@ def do() -> None:
         'thingArn': ensure_aws_resources.thing_arn,
         'iotDataEndpoint': ensure_aws_resources.data_endpoint,
         'iotCredEndpoint': ensure_aws_resources.cred_endpoint,
-        'paths': paths
+        'download_dir': paths['download_dir']
     }
 
     os.chdir(Path(__file__).parents[1])

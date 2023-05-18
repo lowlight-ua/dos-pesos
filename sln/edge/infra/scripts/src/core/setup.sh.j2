@@ -3,7 +3,7 @@ set -x
 
 cd "$(dirname "$0")"
 
-DOWNLOAD_DIR={{ paths.greengrass_setup.download_dir }}
+DOWNLOAD_DIR="{{ download_dir }}"
 
 cp config.yml $DOWNLOAD_DIR
 cp device.pem.crt $DOWNLOAD_DIR
@@ -32,7 +32,7 @@ sudo -E java -Droot="{{ greengrass_install.rootpath }}" -Dlog.store=FILE \
   --component-default-user ggc_user:ggc_group \
   --setup-system-service true
 
-sudo mv device.pem.crt {{ greengrass_install.rootpath }}/device.pem.crt
-sudo mv private.pem.key {{ greengrass_install.rootpath }}/private.pem.key
+sudo mv device.pem.crt "{{ greengrass_install.rootpath }}/device.pem.crt"
+sudo mv private.pem.key "{{ greengrass_install.rootpath }}/private.pem.key"
 curl -s https://www.amazontrust.com/repository/AmazonRootCA1.pem > AmazonRootCA1.pem 
-sudo mv AmazonRootCA1.pem {{ greengrass_install.rootpath }}/AmazonRootCA1.pem
+sudo mv AmazonRootCA1.pem "{{ greengrass_install.rootpath }}/AmazonRootCA1.pem"
