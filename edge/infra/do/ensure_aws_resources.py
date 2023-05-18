@@ -4,7 +4,7 @@ import subprocess
 from pathlib import Path
 
 from do import ensure_aws_cli, util
-from edge.do import ensure_config
+from edge.infra.do import ensure_config
 
 
 thing_arn = None
