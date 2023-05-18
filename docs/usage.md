@@ -90,7 +90,7 @@ This section describes how to create a temporary Thing for testing purposes.
 * Navigate to `aws-iot-device-sdk-python-v2/samples`
 * From `thing/out` on the development machine, copy the files here.
 * **Option 1** (uses cloud discovery): Run `basic_discovery.sh`. You should see messages indicating that the IoT thing connected to Greengrass core and sent a few messages.
-* **Option 2**: (does not use cloud discovery) (Todo automate) Run the following. Replace "???" with the info from `mqtt.json`, and copy `ca.pem` from `<greengrass_core_rootpath>/work/aws.greengrass.clientdevices.Auth/ca.pem` on the edge device machine.
+* **Option 2**: (does not use cloud discovery) (Todo automate) Run the following. Replace "???" with the info from `mqtt.json`, and copy `ca.pem` from `<greengrass_core_rootpath>/work/aws.greengrass.clientdevices.Auth/ca.pem` on the edge device machine. The `client_id` is the name of your client thing from the config you provided.
 
 ```
 python3 pubsub.py --endpoint ??? --port ??? --cert device.pem.crt --key private.pem.key --ca_file ca.pem --client_id ???
