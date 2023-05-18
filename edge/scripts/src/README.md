@@ -1,1 +1,0 @@
-This directory contains script templates. They are the source of scripts that operate on an edge device.

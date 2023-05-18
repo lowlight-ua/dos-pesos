@@ -1,0 +1,1 @@
+This directory contains files that define custom AWS Greengrass components. (For AWS-provided components, see directory `edge/infra/scripts/src/components`).
