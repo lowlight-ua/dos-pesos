@@ -3,7 +3,7 @@ import shutil
 from pathlib import Path
 
 from do import ensure_aws_cli, util
-from edge.infra.do import ensure_config, run_terraform, ensure_aws_resources
+from sln.edge.infra.do import ensure_config, run_terraform, ensure_aws_resources
 
 
 def do() -> None:

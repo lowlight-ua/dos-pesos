@@ -3,7 +3,7 @@ import subprocess
 from pathlib import Path
 
 from do import util
-from edge.infra.do import write_terraform_vars
+from sln.edge.infra.do import write_terraform_vars
 
 
 def do() -> None:

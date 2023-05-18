@@ -2,5 +2,5 @@ These scripts are executed on the development machine to deploy the desired Gree
 
 Note: 
 
-* This is about AWS-provided components. For custom components, see directory `edge/components`.
+* This is about AWS-provided components. For custom components, see directory `sln/edge/components`.
 * You should have run the `core` scripts for the edge device before.

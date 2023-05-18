@@ -39,13 +39,13 @@ These steps will set up a new Greengrass core device by provisioning the necessa
 
 * Install Python and Pip.
 * Install Python dependencies: `pip3 install -r requirements.txt`
-* Run the script `./do.sh edge/infra/do/configure_project`
+* Run the script `./do.sh sln/edge/infra/do/configure_project`
     * You will be guided through the necessary steps to set up dependencies, initialize configuration, set up the working copy of the project, and provision AWS resources necessary for the edge device.
-    * Edge device provisioning scripts will be generated in `edge/infra/scripts/out`.
+    * Edge device provisioning scripts will be generated in `sln/edge/infra/scripts/out`.
 
 **(2) On the edge device:**
 
-Set up the edge device by copying the files in `edge/infra/scripts/out` from the development machine to the edge device and running the scripts over there. The edge device can be the development machine or a different machine. 
+Set up the edge device by copying the files in `sln/edge/infra/scripts/out` from the development machine to the edge device and running the scripts over there. The edge device can be the development machine or a different machine. 
 
 Also in this directory:
 
@@ -56,11 +56,11 @@ Also in this directory:
 
 **On the edge device:**
 
-* Run the uninstall script (part of the `edge/infra/scripts/out` bundle) on the edge machine.
+* Run the uninstall script (part of the `sln/edge/infra/scripts/out` bundle) on the edge machine.
 
 **On the development machine:**
 
-* `cd edge/infra/terraform`
+* `cd sln/edge/infra/terraform`
 * `terraform destroy`
 
 # IoT thing

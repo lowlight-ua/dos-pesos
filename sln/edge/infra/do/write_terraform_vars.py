@@ -3,7 +3,7 @@ import os
 from pathlib import Path
 
 from do import util
-from edge.infra.do import ensure_config
+from sln.edge.infra.do import ensure_config
 
 
 def do() -> None:
