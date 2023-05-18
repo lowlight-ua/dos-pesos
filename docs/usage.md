@@ -21,11 +21,10 @@ These steps will provision instance-level AWS resources required for the creatio
 
 **On any machine:**
 
-* Install AWS CLI and log in using the credentials of the user created above. 
-* Run:
-    * `cd sln/instance/terraform`
-    * `terraform init`
-    * `terraform apply`
+* Install Python and Pip.
+* Install Python dependencies: `pip3 install -r requirements.txt`
+* Run the script `./do.sh sln/instance/do/init_instance`
+    * You will be guided through the necessary steps to set up dependencies and provision AWS resources necessary for the instance.
 
 # Edge device
 
@@ -45,11 +44,13 @@ These steps will set up a new Greengrass core device by provisioning the necessa
 
 **(2) On the edge device:**
 
-Set up the edge device by copying the files in `sln/edge/infra/scripts/out` from the development machine to the edge device and running the scripts over there. The edge device can be the development machine or a different machine. 
+Instal the Greengrass core: copy the files in `sln/edge/infra/scripts/out/core` from the development machine to the edge device and run the script over there. (If the edge device machine is the same as the developer machine, you can run the script in place.)
 
-Also in this directory:
+**(3) On the development machine:**
 
-* `check_deployment.sh`: Checks the status of the initiated deployment. After running `setup.sh` you may run this periodically until the deployment has completed.
+Install the required AWS-provided Greengrass components by running `sln/edge/infra/scripts/components/deploy.sh`. Also in this directory:
+
+* `check_deployment.sh`: Checks the status of the initiated component deployment. After running `setup.sh` you may run this periodically until the deployment has completed.
 * `list.sh`: Lists the installed components, to verify the deployment.
 
 ## Tearing down the edge device
@@ -86,7 +87,7 @@ This section describes how to create a temporary Thing to test the connection to
 * Install Python and Pip.
 * Install the AWS IoT Device SDK v2 for Python:
     * `git clone https://github.com/aws/aws-iot-device-sdk-python-v2.git`
-    * In the cloned repo: `python3 -m pip install --user ./aws-iot-device-sdk-python-v2`
+    * `python3 -m pip install --user ./aws-iot-device-sdk-python-v2`
 * Navigate to `aws-iot-device-sdk-python-v2/samples`
 * From `sln/thing/out` on the development machine, copy the files here.
 * **Option 1** (uses cloud discovery): Run `basic_discovery.sh`. You should see messages indicating that the IoT thing connected to Greengrass core and sent a few messages.
