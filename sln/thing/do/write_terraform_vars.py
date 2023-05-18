@@ -3,7 +3,7 @@ import os
 from pathlib import Path
 
 from do import util
-from thing.do import ensure_config
+from sln.thing.do import ensure_config
 
 
 def do() -> None:
