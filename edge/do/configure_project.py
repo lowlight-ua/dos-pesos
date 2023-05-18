@@ -39,8 +39,8 @@ def do() -> None:
         shutil.rmtree(paths["out"])
     shutil.copytree(paths["src"], paths["out"])
 
-    shutil.copy(f"{paths['certs']}/device.pem.crt", f"{paths['out']}/greengrass")
-    shutil.copy(f"{paths['certs']}/private.pem.key", f"{paths['out']}/greengrass")
+    shutil.copy(f"{paths['certs']}/device.pem.crt", f"{paths['out']}/core")
+    shutil.copy(f"{paths['certs']}/private.pem.key", f"{paths['out']}/core")
 
     print(f"    Writing edge device setup scripts to `{paths['out']}`")
     util.expand_jinja_templates(paths["out"], context)

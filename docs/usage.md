@@ -49,7 +49,7 @@ Set up the edge device by copying the files in `edge/scripts/out` from the devel
 
 The provisioning scripts are:
 
-1. `greengrass`:
+1. `core` – scripts for installing the Greengrass core software. Must be executed on the Greengrass device.
     * `setup.sh`: Automatically installs and configures Greengrass core software on the Edge device.
     * `uninstall.sh`: Uninstalls Greengrass core software.
 2. `components`: After installing Greengrass core:
@@ -108,4 +108,4 @@ python3 pubsub.py --endpoint ??? --port ??? --cert device.pem.crt --key private.
 
 # Checking what Things you have provisioned
 
-Active Things (edge devices and client things) can incur charges to your AWS account. Use `list_things.sh` to show what edges and client things you have provisioned in a deployment.
+Active Things (edge devices and client things) can incur charges to your AWS account. Use `list_things.sh` to show what edges and client things you have provisioned in an instance.
