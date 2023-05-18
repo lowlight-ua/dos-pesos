@@ -39,29 +39,26 @@ These steps will set up a new Greengrass core device by provisioning the necessa
 
 * Install Python and Pip.
 * Install Python dependencies: `pip3 install -r requirements.txt`
-* Run the script `./do.sh edge/do/configure_project`
-    * You will be guided through the necessary steps to set up dependencies, initialize configuration, set up the working copy of the project, and provision AWS resources necessary for the edge device.
-    * Edge device provisioning scripts will be generated in `edge/scripts/out`.
+* Run the script `./do.sh edge/do/configure_project`. You will be guided through the necessary steps to set up dependencies, initialize configuration, set up the working copy of the project, and provision AWS resources necessary for the edge device.
 
 **(2) On the edge device:**
 
-Set up the edge device by copying the files in `edge/scripts/out` from the development machine to the edge device and running the scripts over there. The edge device can be the development machine or a different machine. 
+Install the Greengrass core on the edge device. For this, copy the files in `edge/scripts/out/core` from the development machine to the edge device and running the `setup.sh` scripts over there.
 
-The provisioning scripts are:
+**(3) On the development machine:**
 
-1. `core` – scripts for installing the Greengrass core software. Must be executed on the Greengrass device.
-    * `setup.sh`: Automatically installs and configures Greengrass core software on the Edge device.
-    * `uninstall.sh`: Uninstalls Greengrass core software.
-2. `components`: After installing Greengrass core:
-    * `setup.sh`: Initiates a Greengrass deployment to the Greengrass core device that will install the necessary Greengrass components, such as the MQTT broker.
-    * `check_deployment.sh`: Checks the status of the initiated deployment. After running `setup.sh` you may run this periodically until the deployment has completed.
-    * `list.sh`: Lists the installed components, to verify the deployment.
+Deploy the required Greengrass components to the edge device by executing `deploy.sh` in `edge/scripts/out/components`. 
+
+Also in this directory:
+
+* `check_deployment.sh`: Checks the status of the initiated deployment. After running `setup.sh` you may run this periodically until the deployment has completed.
+* `list.sh`: Lists the installed components, to verify the deployment.
 
 ## Tearing down the edge device
 
 **On the edge device:**
 
-* Run the uninstall script (part of the `edge/scripts/out` bundle) on the edge machine.
+* Run `uninstall.sh` (part of the `edge/scripts/out/core` bundle) on the edge machine.
 
 **On the development machine:**
 
